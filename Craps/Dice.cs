@@ -37,7 +37,7 @@ namespace Craps
         {
             if (ReferenceEquals(a, b)) return true;
 
-            if (((object)a == null) || ((object)b == null)) return false;
+            if ((object)a == null || (object)b == null) return false;
 
             return a.Eyes == b.Eyes;
         }

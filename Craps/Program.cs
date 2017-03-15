@@ -22,25 +22,24 @@ namespace Craps
             }
             else
             {
+                var c = new Cup();
+
                 WriteLine("Please press Enter to roll again...");
                 ReadKey();
-
-                var newCup = new Cup();
-
-                WriteLine($"You rolled {newCup.Sum()} ({newCup.Dice1.Eyes} and {newCup.Dice2.Eyes}) on your second roll.");
+                WriteLine($"You rolled {c.Sum()} ({c.Dice1.Eyes} and {c.Dice2.Eyes}) on your second roll.");
 
                 do
                 {
-                    if (newCup.IsSeven())
+                    if (c.IsSeven())
                     {
-                        WriteLine($"Congratulations, you rolled {newCup.Sum()} and you've won the game.");
+                        WriteLine($"Congratulations, you rolled {c.Sum()} and you've won the game.");
                         ReadKey();
                         break;
                     }
 
-                    if (newCup == cup)
+                    if (c == cup)
                     {
-                        WriteLine($"Congratulations, you rolled a {newCup.Dice1.Eyes} and a {newCup.Dice2.Eyes} the same as the first roll. You've won the game.");
+                        WriteLine($"Congratulations, you rolled a {c.Dice1.Eyes} and a {c.Dice2.Eyes} the same as the first roll. You've won the game.");
                         ReadKey();
                         break;
                     }
@@ -48,9 +47,9 @@ namespace Craps
                     WriteLine("Please press Enter to roll again...");
                     ReadKey();
 
-                    newCup.Roll();
+                    c.Roll();
 
-                    WriteLine($"You rolled {newCup.Sum()} ({newCup.Dice1.Eyes} and {newCup.Dice2.Eyes})");
+                    WriteLine($"You rolled {c.Sum()} ({c.Dice1.Eyes} and {c.Dice2.Eyes})");
                 } while (true);
             }
         }
